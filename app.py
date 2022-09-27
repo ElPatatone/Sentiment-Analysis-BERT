@@ -1,4 +1,3 @@
-from curses import raw
 import streamlit as st
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
