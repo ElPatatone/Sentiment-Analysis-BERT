@@ -5,7 +5,7 @@ The model has been finetuned for product reviews which makes it perform better w
 You can find the model used here: [model](https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment)
 
 I then made a web app using the module `streamlit`  
-[Try out the app here :+1: ](https://elpatatone-sentiment-analysis-bert-app-ctid3i.streamlitapp.com)  
+[Try out the app here :+1: ](https://elpatatone-sentiment-analysis-bert-app-mzoj3t.streamlitapp.com)  
 
 The program will scrape the yelp site that you paste in and it will return the first 10 reviews. The reviews will then be given a score
 from 1 to 5 depending on the sentiment analysis model evaluations.
