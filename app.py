@@ -37,7 +37,10 @@ def main():
     This is an implementation of sentiment analysis using a pretrained BERT model from huggingface.
     The model has also been finetuned for product reviews, it will output a score from 1 - 5 for the given text input.
 
+    #### How to use this?
     You can either unput your own text or copy and paste a link for a resturant on yelp and the program will scrape the page for the reviews.
+    #### Take a look at the huggingface model used
+    - [model](https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment)
     #### You can find the code for this streamlit app in here: 
     - [source code](https://github.com/ElPatatone/Sentiment-Analysis-BERT) 
     """)
@@ -60,7 +63,7 @@ def main():
     #analysing yelp reviews
     st.subheader('Paste in Yelp link')
     st.markdown("""
-    *To save on processing time, this will only output the first 10 reviews.*
+    To save on processing time, this will only output the first 10 reviews.
     """)
     with st.form(key='nlpforms'):
         link = st.text_input("link")
@@ -80,10 +83,12 @@ def main():
             return int(torch.argmax(result.logits))+1
 
         df = pd.DataFrame(np.array(reviews), columns=['review'])
+        df.index = np.arange(1, len(df) + 1)
 
-        df['sentiment'] = df['review'].apply(lambda x: sentiment_score(x[:512]))
+        df['score'] = df['review'].apply(lambda x: sentiment_score(x[:512]))
 
         st.dataframe(df)
+
 
 
 if __name__ == '__main__':
