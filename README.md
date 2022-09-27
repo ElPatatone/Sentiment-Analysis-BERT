@@ -5,8 +5,8 @@ I then made a web app using the module `streamlit`
 [Try out the app here :+1: ](https://elpatatone-sentiment-analysis-bert-app-ctid3i.streamlitapp.com)
 
 ### Demo
-#### User input
-![](text.gif)
-
-#### Yelp link
+#### Yelp Link
 ![](link.gif)
+
+#### User text
+![](user.gif)
